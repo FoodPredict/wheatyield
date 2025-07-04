@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wheat Yield Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        h1, h2 { text-align: center; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="number"] { width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        input[type="submit"] { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%; }
+        input[type="submit"]:hover { background-color: #45a049; }
+        .prediction-result { margin-top: 20px; font-size: 1.2em; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wheat Yield Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" name="temperature" step="0.01" required><br>
+
+            <label for="soil_moisture">Soil Moisture (%):</label>
+            <input type="number" id="soil_moisture" name="soil_moisture" step="0.01" required><br>
+
+            <label for="n_kg_ha">Nitrogen (N kg/ha):</label>
+            <input type="number" id="n_kg_ha" name="n_kg_ha" step="0.01" required><br>
+
+            <label for="p_kg_ha">Phosphorus (P kg/ha):</label>
+            <input type="number" id="p_kg_ha" name="p_kg_ha" step="0.01" required><br>
+
+            <label for="k_kg_ha">Potassium (K kg/ha):</label>
+            <input type="number" id="k_kg_ha" name="k_kg_ha" step="0.01" required><br>
+
+            <input type="submit" value="Predict Yield">
+        </form>
+        <div class="prediction-result" id="predictionResult"></div>
+    </div>
+</body>
+</html>
